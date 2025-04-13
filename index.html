@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Life AI | Student Success Companion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <h1 class="logo">College<span>Life</span>AI</h1>
+                <p class="tagline">Your success companion</p>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li class="nav-item active" data-section="dashboard">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="nav-item" data-section="time-management">
+                        <i class="fas fa-clock"></i>
+                        <span>Time Management</span>
+                    </li>
+                    <li class="nav-item" data-section="study-balance">
+                        <i class="fas fa-balance-scale"></i>
+                        <span>Study-Life Balance</span>
+                    </li>
+                    <li class="nav-item" data-section="career-prep">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Career Preparation</span>
+                    </li>
+                    <li class="nav-item" data-section="academic-success">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Academic Success</span>
+                    </li>
+                    <li class="nav-item" data-section="post-grad">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>Post-Grad Prep</span>
+                    </li>
+                    <li class="nav-item" data-section="financial">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Financial Management</span>
+                    </li>
+                    <li class="nav-item" data-section="social">
+                        <i class="fas fa-users"></i>
+                        <span>Social Adaptation</span>
+                    </li>
+                    <li class="nav-item" data-section="community">
+                        <i class="fas fa-comments"></i>
+                        <span>Community Building</span>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="user-section">
+                <div class="user-info">
+                    <div class="avatar">S</div>
+                    <div class="user-details">
+                        <span class="username">Student User</span>
+                        <span class="user-status">Active</span>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Dashboard Section (Default View) -->
+            <section id="dashboard" class="content-section active">
+                <header class="section-header">
+                    <h2>Dashboard</h2>
+                    <div class="date-display">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span id="current-date">Loading...</span>
+                    </div>
+                </header>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card welcome-card">
+                        <h3>Welcome Back!</h3>
+                        <p>Ready to make today productive? Check your tasks and plan your day.</p>
+                        <button class="btn primary">Get Started</button>
+                    </div>
+                    
+                    <div class="dashboard-card quick-timer">
+                        <h3>Quick Pomodoro</h3>
+                        <div class="timer-display">25:00</div>
+                        <div class="timer-controls">
+                            <button class="btn circle-btn"><i class="fas fa-play"></i></button>
+                            <button class="btn circle-btn"><i class="fas fa-pause"></i></button>
+                            <button class="btn circle-btn"><i class="fas fa-redo"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card mood-tracker">
+                        <h3>How are you feeling today?</h3>
+                        <div class="mood-options">
+                            <button class="mood-option" data-mood="happy">😊</button>
+                            <button class="mood-option" data-mood="neutral">😐</button>
+                            <button class="mood-option" data-mood="sad">😔</button>
+                            <button class="mood-option" data-mood="stressed">😫</button>
+                            <button class="mood-option" data-mood="excited">🤩</button>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card upcoming-tasks">
+                        <h3>Upcoming Tasks</h3>
+                        <ul class="task-list">
+                            <li>
+                                <input type="checkbox" id="task1">
+                                <label for="task1">Complete Math Assignment</label>
+                                <span class="task-time">Today, 3 PM</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="task2">
+                                <label for="task2">Group Study Session</label>
+                                <span class="task-time">Tomorrow, 10 AM</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="task3">
+                                <label for="task3">Submit Essay Draft</label>
+                                <span class="task-time">Fri, 11:59 PM</span>
+                            </li>
+                        </ul>
+                        <button class="btn text-btn">View All Tasks</button>
+                    </div>
+                    
+                    <div class="dashboard-card wellness-tip">
+                        <h3>Wellness Tip of the Day</h3>
+                        <p>Take a 5-minute break every hour to stretch and relax your eyes. It improves focus and reduces fatigue.</p>
+                        <button class="btn text-btn">More Tips</button>
+                    </div>
+                    
+                    <div class="dashboard-card quick-journal">
+                        <h3>Quick Journal Entry</h3>
+                        <textarea placeholder="How's your day going? Write something positive..."></textarea>
+                        <button class="btn primary">Save Entry</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Time Management Section -->
+            <section id="time-management" class="content-section">
+                <header class="section-header">
+                    <h2>Time Management</h2>
+                    <div class="section-actions">
+                        <button class="btn secondary"><i class="fas fa-plus"></i> Add Task</button>
+                    </div>
+                </header>
+                
+                <div class="section-grid">
+                    <div class="pomodoro-container">
+                        <h3>Pomodoro Timer</h3>
+                        <div class="pomodoro-display">
+                            <div class="timer-circle">
+                                <div class="timer-text">25:00</div>
+                                <div class="timer-mode">Focus Session</div>
+                            </div>
+                            <div class="timer-controls">
+                                <button class="btn primary" id="start-timer"><i class="fas fa-play"></i> Start</button>
+                                <button class="btn secondary" id="pause-timer"><i class="fas fa-pause"></i> Pause</button>
+                                <button class="btn tertiary" id="reset-timer"><i class="fas fa-redo"></i> Reset</button>
+                            </div>
+                            <div class="timer-settings">
+                                <div class="setting">
+                                    <label>Focus Time (min)</label>
+                                    <input type="number" value="25" min="1" max="60" id="focus-time">
+                                </div>
+                                <div class="setting">
+                                    <label>Break Time (min)</label>
+                                    <input type="number" value="5" min="1" max="30" id="break-time">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="planner-container">
+                        <h3>Weekly Planner</h3>
+                        <div class="planner-tabs">
+                            <button class="planner-tab active" data-view="daily">Daily</button>
+                            <button class="planner-tab" data-view="weekly">Weekly</button>
+                        </div>
+                        
+                        <div class="daily-planner active">
+                            <div class="planner-header">
+                                <button class="nav-arrow"><i class="fas fa-chevron-left"></i></button>
+                                <h4>Monday, June 12</h4>
+                                <button class="nav-arrow"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            
+                            <div class="time-slots">
+                                <div class="time-slot">
+                                    <span class="time">8:00 AM</span>
+                                    <div class="task">Math Class</div>
+                                </div>
+                                <div class="time-slot">
+                                    <span class="time">9:30 AM</span>
+                                    <div class="task">Study Group</div>
+                                </div>
+                                <div class="time-slot free">
+                                    <span class="time">11:00 AM</span>
+                                    <div class="task">Free Time</div>
+                                </div>
+                                <div class="time-slot">
+                                    <span class="time">1:00 PM</span>
+                                    <div class="task">Lunch Break</div>
+                                </div>
+                                <div class="time-slot">
+                                    <span class="time">2:00 PM</span>
+                                    <div class="task">History Lecture</div>
+                                </div>
+                                <div class="time-slot free">
+                                    <span class="time">3:30 PM</span>
+                                    <div class="task">Free Time</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="weekly-planner">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Mon</th>
+                                        <th>Tue</th>
+                                        <th>Wed</th>
+                                        <th>Thu</th>
+                                        <th>Fri</th>
+                                        <th>Sat</th>
+                                        <th>Sun</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="weekly-task">Math Class</div>
+                                            <div class="weekly-task">Study Group</div>
+                                        </td>
+                                        <td>
+                                            <div class="weekly-task">English Essay</div>
+                                        </td>
+                                        <td>
+                                            <div class="weekly-task">Lab Session</div>
+                                        </td>
+                                        <td>
+                                            <div class="weekly-task">Club Meeting</div>
+                                        </td>
+                                        <td>
+                                            <div class="weekly-task">Project Due</div>
+                                        </td>
+                                        <td class="weekend"></td>
+                                        <td class="weekend"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="add-task-form">
+                            <h4>Add New Task</h4>
+                            <div class="form-group">
+                                <label>Task Name</label>
+                                <input type="text" placeholder="What needs to be done?">
+                            </div>
+                            <div class="form-group">
+                                <label>Date & Time</label>
+                                <input type="datetime-local">
+                            </div>
+                            <div class="form-group">
+                                <label>Priority</label>
+                                <select>
+                                    <option>Low</option>
+                                    <option selected>Medium</option>
+                                    <option>High</option>
+                                </select>
+                            </div>
+                            <button class="btn primary">Add Task</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Study-Life Balance Section -->
+            <section id="study-balance" class="content-section">
+                <header class="section-header">
+                    <h2>Study-Life Balance</h2>
+                </header>
+                
+                <div class="section-grid">
+                    <div class="mood-tracker-container">
+                        <h3>Mood Tracker</h3>
+                        <div class="mood-calendar">
+                            <!-- Calendar view would be generated by JS -->
+                            <div class="calendar-header">
+                                <button class="nav-arrow"><i class="fas fa-chevron-left"></i></button>
+                                <h4>June 2023</h4>
+                                <button class="nav-arrow"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="calendar-grid">
+                                <div class="day-header">Sun</div>
+                                <div class="day-header">Mon</div>
+                                <div class="day-header">Tue</div>
+                                <div class="day-header">Wed</div>
+                                <div class="day-header">Thu</div>
+                                <div class="day-header">Fri</div>
+                                <div class="day-header">Sat</div>
+                                
+                                <!-- Placeholder days -->
+                                <div class="day empty"></div>
+                                <div class="day empty"></div>
+                                <div class="day empty"></div>
+                                <div class="day">
+                                    <span class="date">1</span>
+                                    <div class="mood-indicator happy">😊</div>
+                                </div>
+                                <div class="day">
+                                    <span class="date">2</span>
+                                    <div class="mood-indicator excited">🤩</div>
+                                </div>
+                                <div class="day">
+                                    <span class="date">3</span>
+                                    <div class="mood-indicator neutral">😐</div>
+                                </div>
+                                <div class="day">
+                                    <span class="date">4</span>
+                                    <div class="mood-indicator happy">😊</div>
+                                </div>
+                                <!-- More days would be added by JS -->
+                            </div>
+                        </div>
+                        
+                        <div class="mood-selection">
+                            <h4>How are you feeling today?</h4>
+                            <div class="mood-options large">
+                                <button class="mood-option" data-mood="happy">😊 Happy</button>
+                                <button class="mood-option" data-mood="excited">🤩 Excited</button>
+                                <button class="mood-option" data-mood="neutral">😐 Neutral</button>
+                                <button class="mood-option" data-mood="sad">😔 Sad</button>
+                                <button class="mood-option" data-mood="stressed">😫 Stressed</button>
+                                <button class="mood-option" data-mood="tired">😴 Tired</button>
+                            </div>
+                            <button class="btn primary">Record Mood</button>
+                        </div>
+                    </div>
+                    
+                    <div class="journal-container">
+                        <h3>Daily Journal</h3>
+                        <div class="journal-entries">
+                            <div class="entry-card">
+                                <div class="entry-header">
+                                    <span class="entry-date">June 10, 2023</span>
+                                    <span class="entry-mood">😊 Happy</span>
+                                </div>
+                                <div class="entry-content">
+                                    <p>Today was a great day! I aced my math test and had a fun time with friends at the campus cafe. I feel like I'm finally getting the hang of this college thing.</p>
+                                </div>
+                                <div class="entry-actions">
+                                    <button class="btn icon-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="btn icon-btn"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                            
+                            <div class="entry-card">
+                                <div class="entry-header">
+                                    <span class="entry-date">June 8, 2023</span>
+                                    <span class="entry-mood">😫 Stressed</span>
+                                </div>
+                                <div class="entry-content">
+                                    <p>So much work to do this week. I have two papers due and a midterm coming up. I need to manage my time better and maybe cut down on some extracurriculars.</p>
+                                </div>
+                                <div class="entry-actions">
+                                    <button class="btn icon-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="btn icon-btn"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="new-journal-entry">
+                            <h4>New Entry</h4>
+                            <div class="form-group">
+                                <label>Today's Mood</label>
+                                <select>
+                                    <option value="happy">😊 Happy</option>
+                                    <option value="excited">🤩 Excited</option>
+                                    <option value="neutral">😐 Neutral</option>
+                                    <option value="sad">😔 Sad</option>
+                                    <option value="stressed">😫 Stressed</option>
+                                    <option value="tired">😴 Tired</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Thoughts</label>
+                                <textarea placeholder="How was your day? What are you grateful for? Any challenges you faced?"></textarea>
+                            </div>
+                            <button class="btn primary">Save Entry</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Career Preparation Section -->
+            <section id="career-prep" class="content-section">
+                <header class="section-header">
+                    <h2>Career Preparation</h2>
+                </header>
+                
+                <div class="section-tabs">
+                    <button class="section-tab active" data-tab="resume-builder">Resume Builder</button>
+                    <button class="section-tab" data-tab="skill-checklist">Skill Checklist</button>
+                </div>
+                
+                <div class="tab-content active" id="resume-builder">
+                    <div class="resume-builder-container">
+                        <div class="resume-form">
+                            <h3>Build Your Resume</h3>
+                            
+                            <div class="form-section">
+                                <h4>Personal Information</h4>
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" placeholder="John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" placeholder="john@university.edu">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="tel" placeholder="(123) 456-7890">
+                                </div>
+                                <div class="form-group">
+                                    <label>LinkedIn Profile</label>
+                                    <input type="url" placeholder="https://linkedin.com/in/yourprofile">
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h4>Education</h4>
+                                <div class="form-group">
+                                    <label>University</label>
+                                    <input type="text" placeholder="Your University">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Degree</label>
+                                        <input type="text" placeholder="Bachelor of Science">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Major</label>
+                                        <input type="text" placeholder="Computer Science">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Start Date</label>
+                                        <input type="month">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>End Date (or expected)</label>
+                                        <input type="month">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>GPA (optional)</label>
+                                    <input type="number" step="0.01" min="0" max="4" placeholder="3.5">
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h4>Experience</h4>
+                                <div class="experience-entry">
+                                    <div class="form-group">
+                                        <label>Job Title</label>
+                                        <input type="text" placeholder="Software Developer Intern">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Company</label>
+                                        <input type="text" placeholder="Tech Company Inc.">
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Start Date</label>
+                                            <input type="month">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>End Date</label>
+                                            <input type="month">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea placeholder="Describe your responsibilities and achievements"></textarea>
+                                    </div>
+                                    <button class="btn tertiary">Remove Experience</button>
+                                </div>
+                                <button class="btn secondary"><i class="fas fa-plus"></i> Add Another Experience</button>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h4>Skills</h4>
+                                <div class="skills-input">
+                                    <input type="text" placeholder="Add a skill (e.g., Python, Public Speaking)" id="skill-input">
+                                    <button class="btn icon-btn"><i class="fas fa-plus"></i></button>
+                                </div>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Python <i class="fas fa-times"></i></span>
+                                    <span class="skill-tag">JavaScript <i class="fas fa-times"></i></span>
+                                    <span class="skill-tag">Team Leadership <i class="fas fa-times"></i></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button class="btn primary">Generate Resume</button>
+                                <button class="btn secondary">Save Draft</button>
+                            </div>
+                        </div>
+                        
+                        <div class="resume-preview">
+                            <h3>Resume Preview</h3>
+                            <div class="preview-container">
+                                <div class="resume-template">
+                                    <header class="resume-header">
+                                        <h1 class="resume-name">John Doe</h1>
+                                        <div class="contact-info">
+                                            <span>john@university.edu</span>
+                                            <span>(123) 456-7890</span>
+                                            <span>linkedin.com/in/johndoe</span>
+                                        </div>
+                                    </header>
+                                    
+                                    <section class="resume-section">
+                                        <h2>Education</h2>
+                                        <div class="education-entry">
+                                            <h3>Your University</h3>
+                                            <div class="education-details">
+                                                <span>Bachelor of Science in Computer Science</span>
+                                                <span>Expected May 2024 | GPA: 3.5</span>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    
+                                    <section class="resume-section">
+                                        <h2>Experience</h2>
+                                        <div class="experience-entry">
+                                            <h3>Software Developer Intern</h3>
+                                            <div class="experience-details">
+                                                <span>Tech Company Inc.</span>
+                                                <span>Summer 2022</span>
+                                            </div>
+                                            <ul class="experience-description">
+                                                <li>Developed web applications using Python and JavaScript</li>
+                                                <li>Collaborated with team members on agile projects</li>
+                                                <li>Improved application performance by 20%</li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    
+                                    <section class="resume-section">
+                                        <h2>Skills</h2>
+                                        <div class="skills-list">
+                                            <span>Python</span>
+                                            <span>JavaScript</span>
+                                            <span>Team Leadership</span>
+                                            <span>Problem Solving</span>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="preview-actions">
+                                <button class="btn primary"><i class="fas fa-download"></i> Download PDF</button>
+                                <button class="btn secondary"><i class="fas fa-edit"></i> Edit Resume</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="skill-checklist">
+                    <div class="skill-checklist-container">
+                        <h3>Skill Development Checklist</h3>
+                        <p>Track your progress in developing key skills for your career. Check off skills you've developed and get recommendations for improvement.</p>
+                        
+                        <div class="skill-categories">
+                            <div class="skill-category">
+                                <h4>Technical Skills</h4>
+                                <div class="skill-item">
+                                    <input type="checkbox" id="skill1" checked>
+                                    <label for="skill1">Programming (Python, Java, etc.)</label>
+                                    <div class="skill-progress">
+                                        <div class="progress-bar" style="width: 75%"></div>
+                                        <span>75%</span>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <input type="checkbox" id="skill2">
+                                    <label for="skill2">Data Analysis</label>
+                                    <div class="skill-progress">
+                                        <div class="progress-bar" style="width: 40%"></div>
+                                        <span>40%</span>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <input type="checkbox" id="skill3">
+                                    <label for="skill3">Web Development</label>
+                                    <div class="skill-progress">
+                                        <div class="progress-bar" style="width: 60%"></div>
+                                        <span>60%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4>Soft Skills</h4>
+                                <div class="skill-item">
+                                    <input type="checkbox" id="skill4" checked>
+                                    <label for="skill4">Communication</label>
+                                    <div class="skill-progress">
+                                        <div class="progress-bar" style="width: 80%"></div>
+                                        <span>80%</span>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <input type="checkbox" id="skill5">
+                                    <label for="skill5">Teamwork</label>
+                                    <div class="skill-progress">
+                                        <div class="progress-bar" style="width: 65%"></div>
+                                        <span>65%</span>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <input type="checkbox" id="skill6">
+                                    <label for="skill6">Leadership</label>
+                                    <div class="skill-progress">
+                                        <div class="progress-bar" style="width: 50%"></div>
+                                        <span>50%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4>Career-Specific Skills</h4>
+                                <div class="skill-item">
+                                    <input type="checkbox" id="skill7">
+                                    <label for="skill7">Project Management</label>
+                                    <div class="skill-progress">
+                                        <div class="progress-bar" style="width: 30%"></div>
+                                        <span>30%</span>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <input type="checkbox" id="skill8">
+                                    <label for="skill8">Public Speaking</label>
+                                    <div class="skill-progress">
+                                        <div class="progress-bar" style="width: 55%"></div>
+                                        <span>55%</span>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <input type="checkbox" id="skill9">
+                                    <label for="skill9">Networking</label>
+                                    <div class="skill-progress">
+                                        <div class="progress-bar" style="width: 45%"></div>
+                                        <span>45%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-recommendations">
+                            <h4>Recommendations Based on Your Skills</h4>
+                            <div class="recommendation-card">
+                                <h5>Improve Your Data Analysis Skills</h5>
+                                <p>Consider taking STAT 301 or completing the DataCamp online course to strengthen your data analysis abilities, which are in high demand.</p>
+                                <button class="btn text-btn">View Resources</button>
+                            </div>
+                            <div class="recommendation-card">
+                                <h5>Join the Public Speaking Club</h5>
+                                <p>The campus Toastmasters club meets every Thursday at 6 PM and can help you build confidence in public speaking.</p>
+                                <button class="btn text-btn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Academic Success Section -->
+            <section id="academic-success" class="content-section">
+                <header class="section-header">
+                    <h2>Academic Success & Wellbeing</h2>
+                </header>
+                
+                <div class="section-tabs">
+                    <button class="section-tab active" data-tab="flashcards">Flashcards</button>
+                    <button class="section-tab" data-tab="wellness-tips">Wellness Tips</button>
+                </div>
+                
+                <div class="tab-content active" id="flashcards">
+                    <div class="flashcard-container">
+                        <div class="flashcard-generator">
+                            <h3>AI Flashcard Generator</h3>
+                            <p>Enter your study material below to generate interactive flashcards.</p>
+                            
+                            <div class="input-options">
+                                <div class="form-group">
+                                    <label>Subject</label>
+                                    <input type="text" placeholder="e.g., Biology, Calculus, History">
+                                </div>
+                                <div class="form-group">
+                                    <label>Topic</label>
+                                    <input type="text" placeholder="e.g., Cell Structure, Derivatives, World War II">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Study Material</label>
+                                <textarea placeholder="Paste your notes, textbook excerpts, or key concepts here..."></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button class="btn primary">Generate Flashcards</button>
+                                <button class="btn secondary">Upload File</button>
+                            </div>
+                        </div>
+                        
+                        <div class="flashcard-viewer">
+                            <h3>Your Flashcards</h3>
+                            <div class="flashcard-controls">
+                                <button class="btn icon-btn" id="prev-card"><i class="fas fa-chevron-left"></i></button>
+                                <span class="card-count">Card 1 of 5</span>
+                                <button class="btn icon-btn" id="next-card"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            
+                            <div class="flashcard">
+                                <div class="flashcard-inner">
+                                    <div class="flashcard-front">
+                                        <h4>Biology</h4>
+                                        <p>What is the powerhouse of the cell?</p>
+                                    </div>
+                                    <div class="flashcard-back">
+                                        <h4>Biology</h4>
+                                        <p>The mitochondria is the powerhouse of the cell, responsible for producing energy in the form of ATP.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flashcard-actions">
+                                <button class="btn secondary" id="flip-card">Flip Card</button>
+                                <button class="btn icon-btn"><i class="fas fa-check"></i> Know It</button>
+                                <button class="btn icon-btn"><i class="fas fa-times"></i> Needs Work</button>
+                            </div>
+                            
+                            <div class="flashcard-progress">
+                                <div class="progress-bar" style="width: 20%"></div>
+                                <span>20% mastered</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="wellness-tips">
+                    <div class="wellness-tips-container">
+                        <h3>Mental Wellness Tips</h3>
+                        
+                        <div class="tips-carousel">
+                            <div class="tip-card active">
+                                <div class="tip-icon"><i class="fas fa-bed"></i></div>
+                                <h4>Prioritize Sleep</h4>
+                                <p>Aim for 7-9 hours of quality sleep each night. Establish a regular sleep schedule and create a relaxing bedtime routine.</p>
+                            </div>
+                            <div class="tip-card">
+                                <div class="tip-icon"><i class="fas fa-walking"></i></div>
+                                <h4>Move Your Body</h4>
+                                <p>Regular physical activity reduces stress and improves mood. Even a 10-minute walk can make a difference.</p>
+                            </div>
+                            <div class="tip-card">
+                                <div class="tip-icon"><i class="fas fa-utensils"></i></div>
+                                <h4>Nourish Yourself</h4>
+                                <p>Eat balanced meals with plenty of fruits, vegetables, and whole grains. Stay hydrated throughout the day.</p>
+                            </div>
+                            <div class="tip-card">
+                                <div class="tip-icon"><i class="fas fa-users"></i></div>
+                                <h4>Stay Connected</h4>
+                                <p>Maintain social connections with friends and family. Don't hesitate to reach out when you need support.</p>
+                            </div>
+                            <div class="tip-card">
+                                <div class="tip-icon"><i class="fas fa-medal"></i></div>
+                                <h4>Practice Self-Compassion</h4>
+                                <p>Be kind to yourself. Remember that perfection isn't the goal - progress is what matters.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-controls">
+                            <button class="btn icon-btn" id="prev-tip"><i class="fas fa-chevron-left"></i></button>
+                            <div class="carousel-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <button class="btn icon-btn" id="next-tip"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        
+                        <div class="resources-section">
+                            <h4>Campus Resources</h4>
+                            <div class="resource-cards">
+                                <div class="resource-card">
+                                    <h5>Counseling Center</h5>
+                                    <p>Free confidential counseling services for students.</p>
+                                    <button class="btn text-btn">Learn More</button>
+                                </div>
+                                <div class="resource-card">
+                                    <h5>Health & Wellness</h5>
+                                    <p>Programs and services to support student health.</p>
+                                    <button class="btn text-btn">Learn More</button>
+                                </div>
+                                <div class="resource-card">
+                                    <h5>Academic Support</h5>
+                                    <p>Tutoring, workshops, and success coaching.</p>
+                                    <button class="btn text-btn">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Post-Grad Preparation Section -->
+            <section id="post-grad" class="content-section">
+                <header class="section-header">
+                    <h2>Post-Graduate Preparation & Counseling</h2>
+                </header>
+                
+                <div class="section-tabs">
+                    <button class="section-tab active" data-tab="mock-interviews">Mock Interviews</button>
+                    <button class="section-tab" data-tab="grad-questions">Ask Questions</button>
+                </div>
+                
+                <div class="tab-content active" id="mock-interviews">
+                    <div class="interview-container">
+                        <div class="interview-guide">
+                            <h3>Mock Interview Preparation</h3>
+                            <p>Practice common interview questions and get AI feedback on your responses.</p>
+                            
+                            <div class="interview-categories">
+                                <h4>Interview Categories</h4>
+                                <div class="category-buttons">
+                                    <button class="btn secondary">General</button>
+                                    <button class="btn secondary">Technical</button>
+                                    <button class="btn secondary">Behavioral</button>
+                                    <button class="btn secondary">Case Study</button>
+                                </div>
+                            </div>
+                            
+                            <div class="common-questions">
+                                <h4>Common Questions</h4>
+                                <ul class="question-list">
+                                    <li>"Tell me about yourself."</li>
+                                    <li>"What are your strengths and weaknesses?"</li>
+                                    <li>"Why do you want to work for our company?"</li>
+                                    <li>"Describe a challenge you faced and how you overcame it."</li>
+                                    <li>"Where do you see yourself in 5 years?"</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="interview-tips">
+                                <h4>Interview Tips</h4>
+                                <div class="tips-grid">
+                                    <div class="tip-item">
+                                        <i class="fas fa-handshake"></i>
+                                        <p>Research the company thoroughly before the interview.</p>
+                                    </div>
+                                    <div class="tip-item">
+                                        <i class="fas fa-clock"></i>
+                                        <p>Arrive 10-15 minutes early for in-person interviews.</p>
+                                    </div>
+                                    <div class="tip-item">
+                                        <i class="fas fa-suitcase"></i>
+                                        <p>Dress professionally, even for virtual interviews.</p>
+                                    </div>
+                                    <div class="tip-item">
+                                        <i class="fas fa-comments"></i>
+                                        <p>Practice your answers but keep them natural, not rehearsed.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="interview-practice">
+                            <h3>Practice Session</h3>
+                            <div class="interview-mode-selector">
+                                <button class="btn secondary active">Text Practice</button>
+                                <button class="btn secondary">Audio Practice</button>
+                                <button class="btn secondary">Video Practice</button>
+                            </div>
+                            
+                            <div class="interview-question">
+                                <h4>Question:</h4>
+                                <p>"Tell me about a time you worked in a team and faced a challenge. How did you handle it?"</p>
+                            </div>
+                            
+                            <div class="response-area">
+                                <textarea placeholder="Type your response here..."></textarea>
+                                <button class="btn primary">Submit Response</button>
+                            </div>
+                            
+                            <div class="ai-feedback">
+                                <h4>AI Feedback</h4>
+                                <div class="feedback-card">
+                                    <div class="feedback-section">
+                                        <h5>Strengths</h5>
+                                        <ul>
+                                            <li>Good example of teamwork</li>
+                                            <li>Clear explanation of the challenge</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feedback-section">
+                                        <h5>Areas for Improvement</h5>
+                                        <ul>
+                                            <li>Be more specific about your role</li>
+                                            <li>Include the outcome/result</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feedback-section">
+                                        <h5>Suggested Answer</h5>
+                                        <p>"In my group project last semester, we had a team member who wasn't contributing. As team leader, I organized a meeting to discuss concerns and reassigned tasks based on strengths. We completed the project on time and received an A. This taught me the importance of clear communication in teamwork."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="grad-questions">
+                    <div class="questions-container">
+                        <div class="ask-question">
+                            <h3>Ask Post-Grad Questions</h3>
+                            <p>Get personalized advice about graduate school, job searching, and career planning.</p>
+                            
+                            <div class="form-group">
+                                <label>Your Question</label>
+                                <textarea placeholder="What would you like to know about post-grad life?"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Category</label>
+                                <select>
+                                    <option>Graduate School</option>
+                                    <option>Job Search</option>
+                                    <option>Career Planning</option>
+                                    <option>Networking</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            
+                            <button class="btn primary">Get AI Suggestions</button>
+                        </div>
+                        
+                        <div class="suggestions-area">
+                            <h3>AI Suggestions</h3>
+                            <div class="suggestion-card">
+                                <h4>Question:</h4>
+                                <p>"How soon should I start applying for jobs before graduation?"</p>
+                                
+                                <h4>Answer:</h4>
+                                <p>For most industries, you should begin your job search 6-9 months before graduation. Many large companies recruit early for entry-level positions. For smaller companies, 3-4 months before may be sufficient. Start by:</p>
+                                <ul>
+                                    <li>Updating your resume and LinkedIn profile</li>
+                                    <li>Attending career fairs in the fall semester</li>
+                                    <li>Networking with alumni in your field</li>
+                                    <li>Researching companies you're interested in</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="suggestion-card">
+                                <h4>Question:</h4>
+                                <p>"Is graduate school worth it for my field?"</p>
+                                
+                                <h4>Answer:</h4>
+                                <p>This depends on your career goals and field. For some professions (like academia, law, or medicine), advanced degrees are essential. For others, experience may be more valuable. Consider:</p>
+                                <ul>
+                                    <li>Career paths of professionals in your desired role</li>
+                                    <li>Earning potential with vs. without a graduate degree</li>
+                                    <li>Opportunity cost of time and tuition</li>
+                                    <li>Whether your employer might help fund further education</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Financial Management Section -->
+            <section id="financial" class="content-section">
+                <header class="section-header">
+                    <h2>Financial Management</h2>
+                </header>
+                
+                <div class="section-tabs">
+                    <button class="section-tab active" data-tab="budget-tracker">Budget Tracker</button>
+                    <button class="section-tab" data-tab="scholarships">Scholarships</button>
+                </div>
+                
+                <div class="tab-content active" id="budget-tracker">
+                    <div class="budget-container">
+                        <div class="budget-overview">
+                            <h3>Monthly Budget</h3>
+                            <div class="budget-summary">
+                                <div class="summary-card income">
+                                    <h5>Income</h5>
+                                    <p class="amount">$1,200.00</p>
+                                </div>
+                                <div class="summary-card expenses">
+                                    <h5>Expenses</h5>
+                                    <p class="amount">$950.00</p>
+                                </div>
+                                <div class="summary-card savings">
+                                    <h5>Savings</h5>
+                                    <p class="amount">$250.00</p>
+                                </div>
+                            </div>
+                            
+                            <div class="budget-progress">
+                                <h4>Spending by Category</h4>
+                                <div class="progress-item">
+                                    <span class="category">Housing</span>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar" style="width: 60%"></div>
+                                        <span class="percentage">60%</span>
+                                    </div>
+                                    <span class="amount">$600/$1000</span>
+                                </div>
+                                <div class="progress-item">
+                                    <span class="category">Food</span>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar" style="width: 75%"></div>
+                                        <span class="percentage">75%</span>
+                                    </div>
+                                    <span class="amount">$150/$200</span>
+                                </div>
+                                <div class="progress-item">
+                                    <span class="category">Transportation</span>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar" style="width: 40%"></div>
+                                        <span class="percentage">40%</span>
+                                    </div>
+                                    <span class="amount">$40/$100</span>
+                                </div>
+                                <div class="progress-item">
+                                    <span class="category">Entertainment</span>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar" style="width: 90%"></div>
+                                        <span class="percentage">90%</span>
+                                    </div>
+                                    <span class="amount">$90/$100</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="transaction-management">
+                            <h3>Track Transactions</h3>
+                            
+                            <div class="add-transaction">
+                                <h4>Add New Transaction</h4>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <input type="text" placeholder="e.g., Groceries, Paycheck">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Amount</label>
+                                        <input type="number" step="0.01" placeholder="0.00">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Type</label>
+                                        <select>
+                                            <option>Expense</option>
+                                            <option>Income</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Category</label>
+                                        <select>
+                                            <option>Housing</option>
+                                            <option>Food</option>
+                                            <option>Transportation</option>
+                                            <option>Entertainment</option>
+                                            <option>Education</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input type="date">
+                                    </div>
+                                </div>
+                                <button class="btn primary">Add Transaction</button>
+                            </div>
+                            
+                            <div class="recent-transactions">
+                                <h4>Recent Transactions</h4>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Description</th>
+                                            <th>Category</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="expense">
+                                            <td>Jun 10</td>
+                                            <td>Groceries</td>
+                                            <td>Food</td>
+                                            <td>-$45.20</td>
+                                        </tr>
+                                        <tr class="income">
+                                            <td>Jun 8</td>
+                                            <td>Part-time Job</td>
+                                            <td>Income</td>
+                                            <td>+$300.00</td>
+                                        </tr>
+                                        <tr class="expense">
+                                            <td>Jun 5</td>
+                                            <td>Rent</td>
+                                            <td>Housing</td>
+                                            <td>-$600.00</td>
+                                        </tr>
+                                        <tr class="expense">
+                                            <td>Jun 3</td>
+                                            <td>Movie Tickets</td>
+                                            <td>Entertainment</td>
+                                            <td>-$24.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="scholarships">
+                    <div class="scholarships-container">
+                        <div class="scholarship-search">
+                            <h3>Find Scholarships</h3>
+                            <p>Search for scholarships that match your profile and academic interests.</p>
+                            
+                            <div class="search-filters">
+                                <div class="form-group">
+                                    <label>Major/Field</label>
+                                    <input type="text" placeholder="e.g., Computer Science, Biology">
+                                </div>
+                                <div class="form-group">
+                                    <label>GPA Range</label>
+                                    <select>
+                                        <option>Any GPA</option>
+                                        <option>3.0+</option>
+                                        <option>3.5+</option>
+                                        <option>4.0</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Deadline</label>
+                                    <select>
+                                        <option>Next Month</option>
+                                        <option>Next 3 Months</option>
+                                        <option>Next 6 Months</option>
+                                        <option>Any Time</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button class="btn primary">Search Scholarships</button>
+                        </div>
+                        
+                        <div class="scholarship-results">
+                            <h3>Recommended Scholarships</h3>
+                            
+                            <div class="scholarship-card">
+                                <h4>STEM Excellence Scholarship</h4>
+                                <div class="scholarship-details">
+                                    <span><i class="fas fa-money-bill-wave"></i> $5,000</span>
+                                    <span><i class="fas fa-calendar-alt"></i> Deadline: Aug 15, 2023</span>
+                                    <span><i class="fas fa-graduation-cap"></i> For STEM majors with 3.5+ GPA</span>
+                                </div>
+                                <p>Open to undergraduate students pursuing degrees in science, technology, engineering, or mathematics. Requires essay and two letters of recommendation.</p>
+                                <button class="btn secondary">View Details</button>
+                            </div>
+                            
+                            <div class="scholarship-card">
+                                <h4>Community Service Award</h4>
+                                <div class="scholarship-details">
+                                    <span><i class="fas fa-money-bill-wave"></i> $2,500</span>
+                                    <span><i class="fas fa-calendar-alt"></i> Deadline: Sep 1, 2023</span>
+                                    <span><i class="fas fa-graduation-cap"></i> For students with 100+ service hours</span>
+                                </div>
+                                <p>Awarded to students who demonstrate exceptional commitment to community service. Documentation of volunteer hours required.</p>
+                                <button class="btn secondary">View Details</button>
+                            </div>
+                            
+                            <div class="scholarship-card">
+                                <h4>First-Generation College Student Grant</h4>
+                                <div class="scholarship-details">
+                                    <span><i class="fas fa-money-bill-wave"></i> $3,000</span>
+                                    <span><i class="fas fa-calendar-alt"></i> Deadline: Jul 10, 2023</span>
+                                    <span><i class="fas fa-graduation-cap"></i> For first-generation college students</span>
+                                </div>
+                                <p>Supports students who are the first in their family to attend college. Financial need considered but not required.</p>
+                                <button class="btn secondary">View Details</button>
+                            </div>
+                            
+                            <div class="scholarship-reminder">
+                                <h4>Scholarship Application Tracker</h4>
+                                <div class="reminder-list">
+                                    <div class="reminder-item">
+                                        <input type="checkbox" id="reminder1">
+                                        <label for="reminder1">STEM Excellence Scholarship - Due Aug 15</label>
+                                    </div>
+                                    <div class="reminder-item">
+                                        <input type="checkbox" id="reminder2">
+                                        <label for="reminder2">Community Service Award - Due Sep 1</label>
+                                    </div>
+                                    <div class="reminder-item">
+                                        <input type="checkbox" id="reminder3">
+                                        <label for="reminder3">First-Generation Grant - Due Jul 10</label>
+                                    </div>
+                                </div>
+                                <button class="btn primary">Set Reminders</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Social Adaptation Section -->
+            <section id="social" class="content-section">
+                <header class="section-header">
+                    <h2>Social Adaptation</h2>
+                </header>
+                
+                <div class="section-tabs">
+                    <button class="section-tab active" data-tab="icebreakers">Icebreakers</button>
+                    <button class="section-tab" data-tab="events">Campus Events</button>
+                </div>
+                
+                <div class="tab-content active" id="icebreakers">
+                    <div class="icebreaker-container">
+                        <div class="icebreaker-generator">
+                            <h3>Conversation Starters</h3>
+                            <p>Generate icebreaker questions for social situations, club meetings, or making new friends.</p>
+                            
+                            <div class="category-selector">
+                                <h4>Select Categories</h4>
+                                <div class="category-buttons">
+                                    <button class="btn secondary active">General</button>
+                                    <button class="btn secondary">Academic</button>
+                                    <button class="btn secondary">Fun</button>
+                                    <button class="btn secondary">Deep</button>
+                                </div>
+                            </div>
+                            
+                            <button class="btn primary" id="generate-question">Generate Question</button>
+                            
+                            <div class="question-display">
+                                <div class="question-card">
+                                    <p>If you could have dinner with any historical figure, who would it be and why?</p>
+                                </div>
+                            </div>
+                            
+                            <div class="saved-questions">
+                                <h4>Saved Questions</h4>
+                                <ul class="saved-list">
+                                    <li>What's your favorite way to spend a weekend?</li>
+                                    <li>If you could instantly become an expert in something, what would it be?</li>
+                                    <li>What's something you're looking forward to this semester?</li>
+                                </ul>
+                                <button class="btn text-btn">Clear Saved</button>
+                            </div>
+                        </div>
+                        
+                        <div class="social-tips">
+                            <h3>Social Tips</h3>
+                            <div class="tips-accordion">
+                                <div class="tip-item">
+                                    <button class="accordion-header">
+                                        <h5>Starting Conversations</h5>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p>Begin with open-ended questions that can't be answered with just "yes" or "no." Comment on your shared environment ("This lecture hall is huge!") or ask for opinions ("What did you think of that assignment?").</p>
+                                    </div>
+                                </div>
+                                <div class="tip-item">
+                                    <button class="accordion-header">
+                                        <h5>Remembering Names</h5>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p>Repeat the person's name when you meet them ("Nice to meet you, Sarah"). Associate their name with something memorable (Sarah who wears sunglasses). Use their name a few times in conversation.</p>
+                                    </div>
+                                </div>
+                                <div class="tip-item">
+                                    <button class="accordion-header">
+                                        <h5>Joining Group Conversations</h5>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p>Approach with open body language. Listen first to understand the topic. Wait for a natural pause to contribute. You can say, "That's interesting - I was just learning about that in my [class]."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="social-resources">
+                                <h4>Campus Resources</h4>
+                                <div class="resource-cards">
+                                    <div class="resource-card">
+                                        <h5>Student Organizations</h5>
+                                        <p>Browse and join over 200 student clubs and organizations.</p>
+                                        <button class="btn text-btn">Explore Clubs</button>
+                                    </div>
+                                    <div class="resource-card">
+                                        <h5>International Student Services</h5>
+                                        <p>Support for students adjusting to a new culture.</p>
+                                        <button class="btn text-btn">Learn More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="events">
+                    <div class="events-container">
+                        <h3>Upcoming Campus Events</h3>
+                        
+                        <div class="events-calendar">
+                            <div class="calendar-header">
+                                <button class="nav-arrow"><i class="fas fa-chevron-left"></i></button>
+                                <h4>June 2023</h4>
+                                <button class="nav-arrow"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="calendar-grid">
+                                <div class="day-header">Sun</div>
+                                <div class="day-header">Mon</div>
+                                <div class="day-header">Tue</div>
+                                <div class="day-header">Wed</div>
+                                <div class="day-header">Thu</div>
+                                <div class="day-header">Fri</div>
+                                <div class="day-header">Sat</div>
+                                
+                                <!-- Placeholder days -->
+                                <div class="day empty"></div>
+                                <div class="day empty"></div>
+                                <div class="day empty"></div>
+                                <div class="day">
+                                    <span class="date">1</span>
+                                </div>
+                                <div class="day">
+                                    <span class="date">2</span>
+                                </div>
+                                <div class="day">
+                                    <span class="date">3</span>
+                                    <div class="event-dot" data-event="movie-night"></div>
+                                </div>
+                                <div class="day">
+                                    <span class="date">4</span>
+                                </div>
+                                <!-- More days would be added by JS -->
+                            </div>
+                        </div>
+                        
+                        <div class="events-list">
+                            <div class="event-card">
+                                <div class="event-date">
+                                    <span class="day">15</span>
+                                    <span class="month">Jun</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4>Career Fair</h4>
+                                    <div class="event-meta">
+                                        <span><i class="fas fa-clock"></i> 10:00 AM - 3:00 PM</span>
+                                        <span><i class="fas fa-map-marker-alt"></i> Student Union</span>
+                                    </div>
+                                    <p>Annual career fair with over 100 employers recruiting for internships and full-time positions.</p>
+                                    <button class="btn secondary">RSVP</button>
+                                </div>
+                            </div>
+                            
+                            <div class="event-card">
+                                <div class="event-date">
+                                    <span class="day">20</span>
+                                    <span class="month">Jun</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4>Study Abroad Info Session</h4>
+                                    <div class="event-meta">
+                                        <span><i class="fas fa-clock"></i> 4:00 PM - 5:30 PM</span>
+                                        <span><i class="fas fa-map-marker-alt"></i> International Center</span>
+                                    </div>
+                                    <p>Learn about study abroad opportunities for next semester. Hear from students who've participated.</p>
+                                    <button class="btn secondary">RSVP</button>
+                                </div>
+                            </div>
+                            
+                            <div class="event-card">
+                                <div class="event-date">
+                                    <span class="day">22</span>
+                                    <span class="month">Jun</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4>Movie Night: Outdoor Screening</h4>
+                                    <div class="event-meta">
+                                        <span><i class="fas fa-clock"></i> 8:00 PM - 11:00 PM</span>
+                                        <span><i class="fas fa-map-marker-alt"></i> Quad Lawn</span>
+                                    </div>
+                                    <p>Join us for a free outdoor movie screening. Bring blankets and snacks! Movie TBD by student vote.</p>
+                                    <button class="btn secondary">RSVP</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="event-filter">
+                            <h4>Filter Events</h4>
+                            <div class="filter-options">
+                                <button class="btn secondary active">All Events</button>
+                                <button class="btn secondary">Academic</button>
+                                <button class="btn secondary">Social</button>
+                                <button class="btn secondary">Career</button>
+                                <button class="btn secondary">Free Food</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Building Section -->
+            <section id="community" class="content-section">
+                <header class="section-header">
+                    <h2>Community Building</h2>
+                </header>
+                
+                <div class="section-tabs">
+                    <button class="section-tab active" data-tab="discussions">Discussion Board</button>
+                    <button class="section-tab" data-tab="study-groups">Study Groups</button>
+                </div>
+                
+                <div class="tab-content active" id="discussions">
+                    <div class="discussion-container">
+                        <div class="discussion-forums">
+                            <h3>Discussion Topics</h3>
+                            
+                            <div class="forum-categories">
+                                <div class="forum-category">
+                                    <h4>Academic Support</h4>
+                                    <div class="forum-card">
+                                        <h5>Computer Science</h5>
+                                        <div class="forum-stats">
+                                            <span>45 Topics</span>
+                                            <span>120 Posts</span>
+                                        </div>
+                                        <p>Discuss programming, algorithms, and CS coursework.</p>
+                                        <button class="btn secondary">View Forum</button>
+                                    </div>
+                                    <div class="forum-card">
+                                        <h5>Biology</h5>
+                                        <div class="forum-stats">
+                                            <span>32 Topics</span>
+                                            <span>98 Posts</span>
+                                        </div>
+                                        <p>Study groups and help with biology concepts.</p>
+                                        <button class="btn secondary">View Forum</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="forum-category">
+                                    <h4>Campus Life</h4>
+                                    <div class="forum-card">
+                                        <h5>Housing & Roommates</h5>
+                                        <div class="forum-stats">
+                                            <span>28 Topics</span>
+                                            <span>75 Posts</span>
+                                        </div>
+                                        <p>Find roommates and discuss housing options.</p>
+                                        <button class="btn secondary">View Forum</button>
+                                    </div>
+                                    <div class="forum-card">
+                                        <h5>Clubs & Organizations</h5>
+                                        <div class="forum-stats">
+                                            <span>56 Topics</span>
+                                            <span>210 Posts</span>
+                                        </div>
+                                        <p>Connect with student groups and activities.</p>
+                                        <button class="btn secondary">View Forum</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="recent-discussions">
+                            <h3>Recent Discussions</h3>
+                            
+                            <div class="discussion-threads">
+                                <div class="thread-card">
+                                    <div class="thread-header">
+                                        <h4>Need help with Data Structures assignment</h4>
+                                        <span class="thread-meta">
+                                            <span>Posted by <strong>Alex</strong> in <strong>Computer Science</strong></span>
+                                            <span>2 hours ago</span>
+                                        </span>
+                                    </div>
+                                    <div class="thread-preview">
+                                        <p>I'm stuck on the binary tree traversal problem. Has anyone completed this assignment and can offer some guidance?</p>
+                                    </div>
+                                    <div class="thread-stats">
+                                        <span><i class="fas fa-comment"></i> 5 replies</span>
+                                        <button class="btn text-btn">View Thread</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="thread-card">
+                                    <div class="thread-header">
+                                        <h4>Looking for roommates for next semester</h4>
+                                        <span class="thread-meta">
+                                            <span>Posted by <strong>Jordan</strong> in <strong>Housing</strong></span>
+                                            <span>1 day ago</span>
+                                        </span>
+                                    </div>
+                                    <div class="thread-preview">
+                                        <p>I'm planning to live off-campus next semester near the south side of campus. Looking for 2-3 roommates. Budget is $600/month.</p>
+                                    </div>
+                                    <div class="thread-stats">
+                                        <span><i class="fas fa-comment"></i> 3 replies</span>
+                                        <button class="btn text-btn">View Thread</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="thread-card">
+                                    <div class="thread-header">
+                                        <h4>Best study spots on campus?</h4>
+                                        <span class="thread-meta">
+                                            <span>Posted by <strong>Taylor</strong> in <strong>Campus Life</strong></span>
+                                            <span>2 days ago</span>
+                                        </span>
+                                    </div>
+                                    <div class="thread-preview">
+                                        <p>New student here. Where are the best quiet places to study? The library seems always crowded.</p>
+                                    </div>
+                                    <div class="thread-stats">
+                                        <span><i class="fas fa-comment"></i> 12 replies</span>
+                                        <button class="btn text-btn">View Thread</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="new-thread">
+                                <h4>Start a New Discussion</h4>
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" placeholder="What's your question or topic?">
+                                </div>
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <select>
+                                        <option>Academic Support</option>
+                                        <option>Campus Life</option>
+                                        <option>Career Advice</option>
+                                        <option>General Discussion</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Your Post</label>
+                                    <textarea placeholder="Share your thoughts..."></textarea>
+                                </div>
+                                <button class="btn primary">Post Discussion</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="study-groups">
+                    <div class="study-group-container">
+                        <div class="group-finder">
+                            <h3>Find Study Groups</h3>
+                            <p>Connect with classmates to form study groups for your courses.</p>
+                            
+                            <div class="search-filters">
+                                <div class="form-group">
+                                    <label>Course</label>
+                                    <input type="text" placeholder="Search by course code or name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Meeting Preference</label>
+                                    <select>
+                                        <option>Any</option>
+                                        <option>In-Person</option>
+                                        <option>Virtual</option>
+                                    </select>
+                                </div>
+                                <button class="btn primary">Search Groups</button>
+                            </div>
+                            
+                            <div class="group-results">
+                                <div class="group-card">
+                                    <h4>CS 101 - Introduction to Programming</h4>
+                                    <div class="group-details">
+                                        <span><i class="fas fa-users"></i> 4 members</span>
+                                        <span><i class="fas fa-calendar-alt"></i> Mondays & Wednesdays, 6-7 PM</span>
+                                        <span><i class="fas fa-map-marker-alt"></i> Library Study Room 3</span>
+                                    </div>
+                                    <p>Study group for the introductory programming course. Working through problem sets together.</p>
+                                    <button class="btn secondary">Join Group</button>
+                                </div>
+                                
+                                <div class="group-card">
+                                    <h4>BIO 202 - Genetics</h4>
+                                    <div class="group-details">
+                                        <span><i class="fas fa-users"></i> 3 members</span>
+                                        <span><i class="fas fa-calendar-alt"></i> Fridays, 1-3 PM</span>
+                                        <span><i class="fas fa-video"></i> Zoom</span>
+                                    </div>
+                                    <p>Virtual study group preparing for the midterm exam. Sharing notes and quizzing each other.</p>
+                                    <button class="btn secondary">Join Group</button>
+                                </div>
+                                
+                                <div class="group-card">
+                                    <h4>MATH 301 - Linear Algebra</h4>
+                                    <div class="group-details">
+                                        <span><i class="fas fa-users"></i> 5 members</span>
+                                        <span><i class="fas fa-calendar-alt"></i> Tuesdays, 4-6 PM</span>
+                                        <span><i class="fas fa-map-marker-alt"></i> Math Building Lounge</span>
+                                    </div>
+                                    <p>Working through proofs and problem sets together. All skill levels welcome.</p>
+                                    <button class="btn secondary">Join Group</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="your-groups">
+                            <h3>Your Study Groups</h3>
+                            
+                            <div class="group-card">
+                                <h4>ENG 205 - Literature Survey</h4>
+                                <div class="group-details">
+                                    <span><i class="fas fa-users"></i> 6 members</span>
+                                    <span><i class="fas fa-calendar-alt"></i> Sundays, 2-4 PM</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Coffee Shop Near Campus</span>
+                                </div>
+                                <div class="group-actions">
+                                    <button class="btn icon-btn"><i class="fas fa-comments"></i> Chat</button>
+                                    <button class="btn icon-btn"><i class="fas fa-calendar-plus"></i> Schedule</button>
+                                    <button class="btn icon-btn"><i class="fas fa-sign-out-alt"></i> Leave</button>
+                                </div>
+                            </div>
+                            
+                            <div class="create-group">
+                                <h4>Create a New Study Group</h4>
+                                <div class="form-group">
+                                    <label>Course</label>
+                                    <input type="text" placeholder="Course code and name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea placeholder="What will your group focus on?"></textarea>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Meeting Type</label>
+                                        <select>
+                                            <option>In-Person</option>
+                                            <option>Virtual</option>
+                                            <option>Hybrid</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Max Members</label>
+                                        <input type="number" min="2" max="10" value="4">
+                                    </div>
+                                </div>
+                                <button class="btn primary">Create Group</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
